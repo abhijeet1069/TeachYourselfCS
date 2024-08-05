@@ -2,8 +2,9 @@
 CC = clang
 
 # Source file and output executable
-SRC = src/hello/hello.c
-EXEC = target/hello/program
+SRC = src/information/overflow.c
+EXEC = program
+FLAGS = -Wall -Werror
 
 all : clean build run
 
@@ -12,7 +13,7 @@ build: $(EXEC)
 
 # Build the executable. @ hides the comand being printed
 $(EXEC): $(SRC)
-	@$(CC) $(SRC) -o $(EXEC)
+	@$(CC) $(SRC) $(FLAGS) -o $(EXEC)
 
 # Run the executable
 run:
